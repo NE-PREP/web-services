@@ -4,6 +4,7 @@ import { errorResponse } from "../utils/api.response.js";
 export async function validateAdminRegistration(req, res, next) {
   try {
     const schema = Joi.object({
+      names: Joi.string().label("Names"),
       email: Joi.string().email().required().label("Email"),
       password: Joi.string().min(6).required().label("Password"),
     });
